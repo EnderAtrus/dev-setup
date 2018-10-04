@@ -202,7 +202,7 @@ else
 fi
 
 # Install tmuxinator
-echo -e "Do you want Tmuxinator? (Manages complex tmux sessions for easy contex switching) "
+echo -e "Do you want Tmuxinator? (Manages complex tmux sessions for easy context switching) "
 echo -e -n "${yellow}[Requires tmux, Ruby, wget] ${no_color}(y/n):"
 read ans
 
