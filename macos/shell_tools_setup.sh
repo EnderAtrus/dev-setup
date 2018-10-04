@@ -70,8 +70,9 @@ then
     # nothing
     echo ""
   else
-  echo -e "${yellow}NOTE: You may have to verify Zsh is default shell."
-  echo -e "You may be able to fix with 'chsh -s $(which zsh)' ${no_color}"
+    echo -e "${yellow}NOTE: You may have to verify Zsh is default shell."
+    echo -e "You may be able to fix with 'chsh -s $(which zsh)' ${no_color}"
+  fi
 else
   echo -e "${red}Skipping Zsh!${no_color}"
 fi
@@ -157,7 +158,7 @@ else
   echo -e "${red}Skipping ColorLS!${no_color}"
 fi
 
-echo -3 -n "Do you want wget? (A useful linux utility used to get tmuxinator later in this script)${yellow}[Requires Homebrew] ${no_color}(y/n):"
+echo -e -n "Do you want wget? (A useful linux utility used to get tmuxinator later in this script)${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
