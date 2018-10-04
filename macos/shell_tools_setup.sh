@@ -36,7 +36,7 @@ echo -e "${yellow}NOTE: This requires a working internet connection and the abil
 # Get Homebrew
 echo -e -n "Do you want the Homebrew package manager? (y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting Homebrew:"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -47,7 +47,7 @@ fi
 # Get iTerm2
 echo -e -n "Do you want the iTerm2 macOS terminal replacement? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting iTerm2:"
   brew cask install iterm2
@@ -58,7 +58,7 @@ fi
 # Get Zsh
 echo -e -n "Do you want Z-Shell? (AKA Zsh) ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting zsh:"
   brew install zsh zsh-completions
@@ -80,7 +80,7 @@ fi
 # Get Oh-My-Zsh
 echo -e -n "Do you want the Zsh configuration of Oh-My Zsh? ${yellow}[Requires Zsh] ${no_color}(y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting oh-my-zsh:"
   sh -c "$(curl -fsFL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -91,7 +91,7 @@ fi
 # Get zsh-syntax-highlighting
 echo -e -n "Do you want zsh-syntax-highlighting? ${yellow}[Requires zsh, Homebrew] ${no_color}(y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting zsh-syntax-highlighting:"
   brew install zsh-syntanx-highlighting
@@ -103,7 +103,7 @@ fi
 echo -e "Do you want Nerd Fonts?"
 echo -e -n "(Nerd Fonts include additional symbols, which are useful in many tools) ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting Nerd Fonts:"
   brew tap caskroom/fonts
@@ -119,7 +119,7 @@ fi
 # Get Powerlevel9k
 echo -e -n "Do you want the Powerlevel 9k Zsh theme? ${yellow}[Requires Zsh, git, nerd font] ${no_color}(y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting Powerlevel9k:"
   git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
@@ -135,7 +135,7 @@ fi
 # Get Ruby
 echo -e -n "Do you want Ruby? (Needed for many things later in this script) ${yellow}[Requires Homebrew]${no_color} (y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting Ruby:"
   brew install ruby
@@ -146,7 +146,7 @@ fi
 # Get ColorLS
 echo -e -n "Do you want ColorLS? (A very nice replacement for '\$ ls') ${yellow}[Requires Ruby, Zsh] ${no_color}(y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting ColorLS:"
   sudo gem install colorls
@@ -164,7 +164,7 @@ fi
 echo -e "Do you want wget?"
 echo -e -n "(A useful linux utility used to get tmuxinator later in this script)${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   # Get wget
   echo -e "Getting wget:"
@@ -176,7 +176,7 @@ fi
 # Install tmux
 echo -e -n "Do you want tmux? (A very useful termial multiplexer) ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting tmux:"
   brew install tmux
@@ -191,7 +191,7 @@ fi
 # Install oh-my-tmux
 echo -e -n "Do you want the tmux configuration of oh-my-tmux? ${yellow}[Requires tmux, git] ${no_color}(y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting oh-my-tmux:"
   cd
@@ -206,7 +206,7 @@ fi
 echo -e "Do you want Tmuxinator? (Manages complex tmux sessions for easy contex switching) "
 echo -e -n "${yellow}[Requires tmux, Ruby, wget] ${no_color}(y/n):"
 read ans
-if [ ans='y' ] || [ ans='yes' ] || [ ans='Y' ] || [ ans='Yes' ] || [ ans='YES' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting Tmuxinator:"
   gem install tmuxinator
@@ -229,7 +229,7 @@ fi
 
 # Set VIM as default text editor
 read -p "Do you want VIM set as default terminal text editor? (y/n):" ans
-if [ans ='y' || ans= 'yes']
+if [ "$ans"='y' || "$ans"='yes' ]
 then
   echo -e "export EDITOR='vim' " >> ~/.zshrc
 else
@@ -239,7 +239,7 @@ fi
 # Add alias to .zshrc
 echo -e -n "Do you want short aliases for '\$ exit' and '\$ clear'? ${yellow}[Requires Zsh] ${no_color}(y/n):"
 read ans
-if [ans ='y' || ans= 'yes']
+if [ "$ans"='y' || "$ans"='yes' ]
 then
   echo "#------------------------------------------" >> ~/.zshrc
   echo "# These were added via the setup script" >> ~/.zshrc
