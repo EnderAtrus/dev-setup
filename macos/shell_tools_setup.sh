@@ -30,13 +30,13 @@ no_color = '\033[0m'
 yell
 echo -e "${green}Welcome to Seth's Terminal Development Envrionment Setup Script${no_color}"
 echo -e "${cyan}Feel free to opt out of any feature/tool that you want${no_color}"
-echo -e "${cyan}Although I recommend each one :)${no_color}"
-echo -e "${yellow}NOTE: This requires a working internet connection${no_color}"
+echo -e "${cyan}Even though I do recommend each one :)${no_color}"
+echo -e "${yellow}NOTE: This requires a working internet connection and the ability to clone git repos${no_color}"
 
 # Get Homebrew
 echo -e -n "Do you want Homebrew? (y/n)"
 read ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   echo -e "Getting Homebrew:"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -47,7 +47,7 @@ fi
 # Get iTerm2
 echo -e -n "Do you want iTerm2? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   echo -e "Getting iTerm2:"
   brew cask install iterm2
@@ -58,7 +58,7 @@ fi
 # Get Zsh
 echo -e -n "Do you want Zsh? [Requires Homebrew] (y/n):"
 read ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   echo -e "Getting zsh:"
   brew install zsh zsh-completions
@@ -78,7 +78,7 @@ fi
 
 echo -e -n "Do you want Oh-My Zsh? ${yellow}[Requires Zsh] ${no_color}(y/n):"
 read ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   # Get Oh-My-Zsh
   echo -e "Getting oh-my-zsh:"
@@ -89,7 +89,7 @@ fi
 
 echo -e -n "Do you want zsh-syntax-highlighting? ${yellow}[Requires zsh, Homebrew] ${no_color}(y/n):"
 read ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   # Get zsh-syntax-highlighting
   echo -e "Getting zsh-syntax-highlighting:"
@@ -100,7 +100,7 @@ fi
 
 echo -e -n "Do you want Nerd Fonts? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   # Get nerd fonts
   echo -e "Getting Nerd Fonts:"
@@ -116,7 +116,7 @@ fi
 
 echo -e -n "Do you want the Powerlevel 9k Zsh theme? ${yellow}[Requires Zsh, git, nerd font] ${no_color}(y/n):"
 read ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   # Get Powerlevel9k
   echo -e "Getting Powerlevel9k:"
@@ -131,7 +131,7 @@ else
 fi
 
 echo -e -n "Do you want Ruby? ${yellow}[Requires Homebrew]${no_color} (y/n):" ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   # Get Ruby
   echo -e "Getting Ruby:"
@@ -142,7 +142,7 @@ fi
 
 echo -e -n "Do you want ColorLS? ${yellow}[Requires Ruby, Zsh] ${no_color}(y/n):"
 read ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   # Get colorls
   echo -e "Getting ColorLS:"
@@ -159,7 +159,7 @@ fi
 
 echo -3 -n "Do you want wget? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   # Get wget
   echo -e "Getting wget:"
@@ -170,7 +170,7 @@ fi
 
 echo -e -n "Do you want tmux? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   # Install tmux
   echo -e "Getting tmux:"
@@ -185,7 +185,7 @@ fi
 
 echo -e -n "Do you want oh-my-tmux? ${yellow}[Requires tmux, git] ${no_color}(y/n):"
 read ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   # Install oh-my-tmux
   echo -e "Getting oh-my-tmux:"
@@ -199,7 +199,7 @@ fi
 
 echo -e -n "Do you want Tmuxinator? ${yellow}[Requires tmux, Ruby, wget] ${no_color}(y/n):"
 read ans
-if [ans = 'y' || ans = 'yes'] ;
+if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   # Install tmuxinator
   echo -e "Getting Tmuxinator:"
