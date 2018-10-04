@@ -34,7 +34,7 @@ echo -e "${cyan}Even though I do recommend each one :)${no_color}"
 echo -e "${yellow}NOTE: This requires a working internet connection and the ability to clone git repos${no_color}"
 
 # Get Homebrew
-echo -e -n "Do you want Homebrew? (y/n)"
+echo -e -n "Do you want the Homebrew package manager? (y/n)"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -45,7 +45,7 @@ else
 fi
 
 # Get iTerm2
-echo -e -n "Do you want iTerm2? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
+echo -e -n "Do you want the iTerm2 macOS terminal replacement? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -56,7 +56,7 @@ else
 fi
 
 # Get Zsh
-echo -e -n "Do you want Zsh? [Requires Homebrew] (y/n):"
+echo -e -n "Do you want the Z-Shell? (AKA Zsh) [Requires Homebrew] (y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -76,7 +76,7 @@ else
   echo -e "${red}Skipping Zsh!${no_color}"
 fi
 
-echo -e -n "Do you want Oh-My Zsh? ${yellow}[Requires Zsh] ${no_color}(y/n):"
+echo -e -n "Do you want the Zsh configuration of Oh-My Zsh? ${yellow}[Requires Zsh] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -98,7 +98,7 @@ else
   echo -e "${red}Skipping zsh-syntax-highlighting!${no_color}"
 fi
 
-echo -e -n "Do you want Nerd Fonts? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
+echo -e -n "Do you want Nerd Fonts? (Fonts that include many symbols) ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -140,7 +140,7 @@ else
   echo -e "${red}Skipping Ruby!${no_color}"
 fi
 
-echo -e -n "Do you want ColorLS? ${yellow}[Requires Ruby, Zsh] ${no_color}(y/n):"
+echo -e -n "Do you want ColorLS? (A very nice replacement for '\$ ls') ${yellow}[Requires Ruby, Zsh] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -157,7 +157,7 @@ else
   echo -e "${red}Skipping ColorLS!${no_color}"
 fi
 
-echo -3 -n "Do you want wget? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
+echo -3 -n "Do you want wget? (A useful linux utility used to get tmuxinator later in this script)${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -168,7 +168,7 @@ else
   echo -e "${red}Skipping wget!${no_color}"
 fi
 
-echo -e -n "Do you want tmux? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
+echo -e -n "Do you want tmux? (A very useful termial multiplexer) ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -183,7 +183,7 @@ else
   echo -e "${red}Skipping tmux!${no_color}"
 fi
 
-echo -e -n "Do you want oh-my-tmux? ${yellow}[Requires tmux, git] ${no_color}(y/n):"
+echo -e -n "Do you want the tmux configuration of oh-my-tmux? ${yellow}[Requires tmux, git] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -197,7 +197,7 @@ else
   echo -e "${red}Skipping oh-my-tmux!${no_color}"
 fi
 
-echo -e -n "Do you want Tmuxinator? ${yellow}[Requires tmux, Ruby, wget] ${no_color}(y/n):"
+echo -e -n "Do you want Tmuxinator? (Manages complex tmux sessions for easy contex switching) ${yellow}[Requires tmux, Ruby, wget] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -229,7 +229,7 @@ else
   echo -e "${red}NOT setting VIM as default${no_color}"
 fi
 
-echo -e -n "Do you want short aliases for exiting and clearing? ${yellow}[Requires Zsh] ${no_color}(y/n):"
+echo -e -n "Do you want short aliases for '\$ exit' and '\$ clear'? ${yellow}[Requires Zsh] ${no_color}(y/n):"
 read ans
 if [ans ='y' || ans= 'yes'] ;
 then
