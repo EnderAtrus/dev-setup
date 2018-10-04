@@ -7,7 +7,7 @@ try() { "$@" || die "cannot $*"; }
 # Enable exit on error
 set -e
 
-# Define text colors for echo -e output *_l = light variation, *_d = dark variation
+# Define text colors for echo -e output; *_l = light variation, *_d = dark variation
 red = '\033[0;31m'
 red_l = '\033[1;31m'
 brown_orange = '\033[0;33m'
@@ -77,33 +77,33 @@ else
   echo -e "${red}Skipping Zsh!${no_color}"
 fi
 
+# Get Oh-My-Zsh
 echo -e -n "Do you want the Zsh configuration of Oh-My Zsh? ${yellow}[Requires Zsh] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
-  # Get Oh-My-Zsh
   echo -e "Getting oh-my-zsh:"
   sh -c "$(curl -fsFL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 else
   echo -e "${red}Skipping oh-my-zsh!${no_color}"
 fi
 
+# Get zsh-syntax-highlighting
 echo -e -n "Do you want zsh-syntax-highlighting? ${yellow}[Requires zsh, Homebrew] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
-  # Get zsh-syntax-highlighting
   echo -e "Getting zsh-syntax-highlighting:"
   brew install zsh-syntanx-highlighting
 else
   echo -e "${red}Skipping zsh-syntax-highlighting!${no_color}"
 fi
 
-echo -e -n "Do you want Nerd Fonts? (Fonts that include many symbols) ${yellow}[Requires Homebrew] ${no_color}(y/n):"
+# Get nerd fonts
+echo -e -n "Do you want Nerd Fonts? (Fonts that include many symbols, useful in many included tools) ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
-  # Get nerd fonts
   echo -e "Getting Nerd Fonts:"
   brew tap caskroom/fonts
   brew cask install font-spacemono-nerd-font
@@ -115,11 +115,11 @@ else
 fi
 
 
+# Get Powerlevel9k
 echo -e -n "Do you want the Powerlevel 9k Zsh theme? ${yellow}[Requires Zsh, git, nerd font] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
-  # Get Powerlevel9k
   echo -e "Getting Powerlevel9k:"
   git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
   echo -e "POWERLEVEL9K_MODE='nerdfont-complete'" >> ~./zshrc
@@ -131,21 +131,21 @@ else
   echo -e "${red}Skipping Powerlevel9k!${no_color}"
 fi
 
-echo -e -n "Do you want Ruby? ${yellow}[Requires Homebrew]${no_color} (y/n):" ans
+# Get Ruby
+echo -e -n "Do you want Ruby? (Needed for many things later in this script) ${yellow}[Requires Homebrew]${no_color} (y/n):" ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
-  # Get Ruby
   echo -e "Getting Ruby:"
   brew install ruby
 else
   echo -e "${red}Skipping Ruby!${no_color}"
 fi
 
+# Get ColorLS
 echo -e -n "Do you want ColorLS? (A very nice replacement for '\$ ls') ${yellow}[Requires Ruby, Zsh] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
-  # Get colorls
   echo -e "Getting ColorLS:"
   sudo gem install colorls
   echo "#------------------------------------------" >> ~/.zshrc
@@ -158,6 +158,7 @@ else
   echo -e "${red}Skipping ColorLS!${no_color}"
 fi
 
+# Install wget
 echo -e -n "Do you want wget? (A useful linux utility used to get tmuxinator later in this script)${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
@@ -169,11 +170,11 @@ else
   echo -e "${red}Skipping wget!${no_color}"
 fi
 
+# Install tmux
 echo -e -n "Do you want tmux? (A very useful termial multiplexer) ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
-  # Install tmux
   echo -e "Getting tmux:"
   brew install tmux
   echo "#------------------------------------------" >> ~/.zshrc
@@ -184,11 +185,11 @@ else
   echo -e "${red}Skipping tmux!${no_color}"
 fi
 
+# Install oh-my-tmux
 echo -e -n "Do you want the tmux configuration of oh-my-tmux? ${yellow}[Requires tmux, git] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
-  # Install oh-my-tmux
   echo -e "Getting oh-my-tmux:"
   cd
   git clone https://github.com/gpakosz/.tmux.git
@@ -198,11 +199,11 @@ else
   echo -e "${red}Skipping oh-my-tmux!${no_color}"
 fi
 
+# Install tmuxinator
 echo -e -n "Do you want Tmuxinator? (Manages complex tmux sessions for easy contex switching) ${yellow}[Requires tmux, Ruby, wget] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
-  # Install tmuxinator
   echo -e "Getting Tmuxinator:"
   gem install tmuxinator
 
@@ -222,6 +223,7 @@ else
   echo -e "${red}Skipping Tmuxinator!${no_color}"
 fi
 
+# Set VIM as default text editor
 read -p "Do you want VIM set as default terminal text editor? (y/n):" ans
 if [ans ='y' || ans= 'yes'] ;
 then
@@ -230,11 +232,11 @@ else
   echo -e "${red}NOT setting VIM as default${no_color}"
 fi
 
+# Add alias to .zshrc
 echo -e -n "Do you want short aliases for '\$ exit' and '\$ clear'? ${yellow}[Requires Zsh] ${no_color}(y/n):"
 read ans
 if [ans ='y' || ans= 'yes'] ;
 then
-  # Add alias to .zshrc
   echo "#------------------------------------------" >> ~/.zshrc
   echo "# These were added via the setup script" >> ~/.zshrc
   echo "alias c='clear' " >> ~/.zshrc
