@@ -34,7 +34,7 @@ echo -e "${cyan}Even though I do recommend each one :)${no_color}"
 echo -e "${yellow}NOTE: This requires a working internet connection and the ability to clone git repos${no_color}"
 
 # Get Homebrew
-echo -e -n "Do you want the Homebrew package manager? (y/n)"
+echo -e -n "Do you want the Homebrew package manager? (y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -56,7 +56,7 @@ else
 fi
 
 # Get Zsh
-echo -e -n "Do you want the Z-Shell? (AKA Zsh) [Requires Homebrew] (y/n):"
+echo -e -n "Do you want Z-Shell? (AKA Zsh) [Requires Homebrew] (y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -71,7 +71,7 @@ then
     echo ""
   else
     echo -e "${yellow}NOTE: You may have to verify Zsh is default shell."
-    echo -e "You may be able to fix with 'chsh -s $(which zsh)' ${no_color}"
+    echo -e "You may be able to fix with '\$ chsh -s $(which zsh)' ${no_color}"
   fi
 else
   echo -e "${red}Skipping Zsh!${no_color}"
@@ -100,7 +100,8 @@ else
 fi
 
 # Get nerd fonts
-echo -e -n "Do you want Nerd Fonts? (Fonts that include many symbols, useful in many included tools) ${yellow}[Requires Homebrew] ${no_color}(y/n):"
+echo -e "Do you want Nerd Fonts?"
+echo -e -n "(Nerd Fonts include additional symbols, which are useful in many tools) ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -132,7 +133,8 @@ else
 fi
 
 # Get Ruby
-echo -e -n "Do you want Ruby? (Needed for many things later in this script) ${yellow}[Requires Homebrew]${no_color} (y/n):" ans
+echo -e -n "Do you want Ruby? (Needed for many things later in this script) ${yellow}[Requires Homebrew]${no_color} (y/n):"
+read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
   echo -e "Getting Ruby:"
@@ -159,7 +161,8 @@ else
 fi
 
 # Install wget
-echo -e -n "Do you want wget? (A useful linux utility used to get tmuxinator later in this script)${yellow}[Requires Homebrew] ${no_color}(y/n):"
+echo -e "Do you want wget?"
+echo -e -n "(A useful linux utility used to get tmuxinator later in this script)${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
@@ -200,7 +203,8 @@ else
 fi
 
 # Install tmuxinator
-echo -e -n "Do you want Tmuxinator? (Manages complex tmux sessions for easy contex switching) ${yellow}[Requires tmux, Ruby, wget] ${no_color}(y/n):"
+echo -e "Do you want Tmuxinator? (Manages complex tmux sessions for easy contex switching) "
+echo -e -n "${yellow}[Requires tmux, Ruby, wget] ${no_color}(y/n):"
 read ans
 if [ans = 'y'] || [ans = 'yes'] || [ans = 'Y'] || [ans = 'Yes'] || [ans = 'YES'] ;
 then
