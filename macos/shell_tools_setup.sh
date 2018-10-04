@@ -28,9 +28,8 @@ no_color='\033[0m'
 
 # Announce the Running of the script
 yell
-echo -e "${green}Welcome to Seth's Terminal Development Envrionment Setup Script${no_color}"
-echo -e "${cyan}Feel free to opt out of any feature/tool that you want${no_color}"
-echo -e "${cyan}Even though I do recommend each one :)${no_color}"
+echo -e "${green}Welcome to Seth's Terminal Development Envrionment Setup Script for macOS${no_color}"
+echo -e "${cyan}Feel free to opt out of any features or tools that you want, even though I do recommend each one :)${no_color}"
 echo -e "${yellow}NOTE: This requires a working internet connection and the ability to clone git repos${no_color}"
 
 # Get Homebrew
@@ -41,7 +40,7 @@ then
   echo -e "Getting Homebrew:"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
-  echo -e "${red}Skipping Homebrew!${no_color}"
+  echo -e "${red}Skipping Homebrew!${no_color}\n"
 fi
 
 # Get iTerm2
@@ -52,7 +51,7 @@ then
   echo -e "Getting iTerm2:"
   brew cask install iterm2
 else
-  echo -e "${red}Skipping iTerm2!${no_color}"
+  echo -e "${red}Skipping iTerm2!${no_color}\n"
 fi
 
 # Get Zsh
@@ -74,7 +73,7 @@ then
     echo -e "You may be able to fix with '\$ chsh -s $(which zsh)' ${no_color}"
   fi
 else
-  echo -e "${red}Skipping Zsh!${no_color}"
+  echo -e "${red}Skipping Zsh!${no_color}\n"
 fi
 
 # Get Oh-My-Zsh
@@ -85,7 +84,7 @@ then
   echo -e "Getting oh-my-zsh:"
   sh -c "$(curl -fsFL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 else
-  echo -e "${red}Skipping oh-my-zsh!${no_color}"
+  echo -e "${red}Skipping oh-my-zsh!${no_color}\n"
 fi
 
 # Get zsh-syntax-highlighting
@@ -96,7 +95,7 @@ then
   echo -e "Getting zsh-syntax-highlighting:"
   brew install zsh-syntanx-highlighting
 else
-  echo -e "${red}Skipping zsh-syntax-highlighting!${no_color}"
+  echo -e "${red}Skipping zsh-syntax-highlighting!${no_color}\n"
 fi
 
 # Get nerd fonts
@@ -112,7 +111,7 @@ then
   echo -e "${yellow}NOTE: You may have to select a nerd font in iTerm2 preferences"
   echo -e "Look for font-spacemono-nerdfont ${no_color}"
 else
-  echo -e "${red}Skipping Nerd Fonts!${no_color}"
+  echo -e "${red}Skipping Nerd Fonts!${no_color}\n"
 fi
 
 
@@ -129,7 +128,7 @@ then
   echo -e "POWERLEVEL9K_PROMPT_ON_NEWLINE=true" >> ~/.zshrc
   echo -e "POWERLEVEL9K_RPROMPT_ON_NEWLINE=true" >> ~/.zshrc
 else
-  echo -e "${red}Skipping Powerlevel9k!${no_color}"
+  echo -e "${red}Skipping Powerlevel9k!${no_color}\n"
 fi
 
 # Get Ruby
@@ -140,7 +139,7 @@ then
   echo -e "Getting Ruby:"
   brew install ruby
 else
-  echo -e "${red}Skipping Ruby!${no_color}"
+  echo -e "${red}Skipping Ruby!${no_color}\n"
 fi
 
 # Get ColorLS
@@ -157,7 +156,7 @@ then
   echo "alias l='colorls -l' " >> ~/.zshrc
   echo "alias ll='colorls -la' " >> ~/.zshrc
 else
-  echo -e "${red}Skipping ColorLS!${no_color}"
+  echo -e "${red}Skipping ColorLS!${no_color}\n"
 fi
 
 # Install wget
@@ -170,7 +169,7 @@ then
   echo -e "Getting wget:"
   brew install wget
 else
-  echo -e "${red}Skipping wget!${no_color}"
+  echo -e "${red}Skipping wget!${no_color}\n"
 fi
 
 # Install tmux
@@ -185,7 +184,7 @@ then
   echo "alias tls='tmux ls' " >> ~/.zshrc
   echo "alias n='tmux new -s' " >> ~/.zshrc
 else
-  echo -e "${red}Skipping tmux!${no_color}"
+  echo -e "${red}Skipping tmux!${no_color}\n"
 fi
 
 # Install oh-my-tmux
@@ -199,14 +198,14 @@ then
   ln -s -f .tmux/.tmux.conf
   cp .tmux/.tmux.conf.local .
 else
-  echo -e "${red}Skipping oh-my-tmux!${no_color}"
+  echo -e "${red}Skipping oh-my-tmux!${no_color}\n"
 fi
 
 # Install tmuxinator
 echo -e "Do you want Tmuxinator? (Manages complex tmux sessions for easy contex switching) "
 echo -e -n "${yellow}[Requires tmux, Ruby, wget] ${no_color}(y/n):"
 read ans
-if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
+
 then
   echo -e "Getting Tmuxinator:"
   gem install tmuxinator
@@ -224,29 +223,29 @@ then
     echo -e" You have the option of the script setting one later on ${no_color}"
   fi
 else
-  echo -e "${red}Skipping Tmuxinator!${no_color}"
+  echo -e "${red}Skipping Tmuxinator!${no_color}\n"
 fi
 
 # Set VIM as default text editor
 read -p "Do you want VIM set as default terminal text editor? (y/n):" ans
-if [ "$ans"='y' || "$ans"='yes' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "export EDITOR='vim' " >> ~/.zshrc
 else
-  echo -e "${red}NOT setting VIM as default${no_color}"
+  echo -e "${red}NOT setting VIM as default${no_color}\n"
 fi
 
 # Add alias to .zshrc
 echo -e -n "Do you want short aliases for '\$ exit' and '\$ clear'? ${yellow}[Requires Zsh] ${no_color}(y/n):"
 read ans
-if [ "$ans"='y' || "$ans"='yes' ]
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo "#------------------------------------------" >> ~/.zshrc
   echo "# These were added via the setup script" >> ~/.zshrc
   echo "alias c='clear' " >> ~/.zshrc
   echo "alias e='exit' " >> ~/.zshrc
 else
-  echo -e "${red}NOT creating aliases!${no_color}"
+  echo -e "${red}NOT creating aliases!${no_color}\n"
 fi
 
 
