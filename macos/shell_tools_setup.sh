@@ -205,7 +205,7 @@ fi
 echo -e "Do you want Tmuxinator? (Manages complex tmux sessions for easy context switching) "
 echo -e -n "${yellow}[Requires tmux, Ruby, wget] ${no_color}(y/n):"
 read ans
-
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting Tmuxinator:"
   gem install tmuxinator
