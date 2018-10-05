@@ -26,9 +26,12 @@ gray_d='\033[1;30m'
 white='\033[1;37m'
 no_color='\033[0m'
 
+#Define the version number
+version='1.0'
+
 # Announce the Running of the script
-echo -e "${green}Welcome to Seth's Terminal Development Envrionment Setup Script for macOS${no_color}"
-echo -e "${cyan}Feel free to opt out of any features or tools that you want, even though I do recommend each one :)${no_color}"
+echo -e "${green}Welcome to Seth's Terminal Development Envrionment Setup Script for macOS! Version:${version}${no_color}"
+echo -e "${cyan}Feel free to opt out of any features or tools that you want${no_color}"
 echo -e "${yellow}NOTE: This requires a working internet connection and the ability to clone git repos${no_color}"
 
 # Get Homebrew
@@ -103,8 +106,8 @@ else
 fi
 
 # Get nerd fonts
-echo -e "Do you want Nerd Fonts?"
-echo -e -n "(Nerd Fonts include additional symbols, which are useful in many tools) ${yellow}[Requires Homebrew] ${no_color}(y/n):"
+echo -e "Do you want Nerd Fonts? (Fonts including additional symbols, which are useful in many tools)"
+echo -e -n "${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
@@ -167,8 +170,8 @@ else
 fi
 
 # Install wget
-echo -e "Do you want wget?"
-echo -e -n "(A useful linux utility used to get tmuxinator later in this script)${yellow}[Requires Homebrew] ${no_color}(y/n):"
+echo -e "Do you want wget? (A useful linux utility used to get Tmuxinator later in this script)"
+echo -e -n "${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
