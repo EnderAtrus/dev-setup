@@ -38,6 +38,7 @@ if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes
 then
   echo -e "Getting Homebrew:"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo "\n"
 else
   echo -e "${red}Skipping Homebrew!${no_color}\n"
 fi
@@ -49,6 +50,7 @@ if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes
 then
   echo -e "Getting iTerm2:"
   brew cask install iterm2
+  echo "\n"
 else
   echo -e "${red}Skipping iTerm2!${no_color}\n"
 fi
@@ -71,6 +73,7 @@ then
     echo -e "${yellow}NOTE: You may have to verify Zsh is default shell."
     echo -e "You may be able to fix with '\$ chsh -s $(which zsh)' ${no_color}"
   fi
+echo "\n"
 else
   echo -e "${red}Skipping Zsh!${no_color}\n"
 fi
@@ -82,6 +85,7 @@ if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes
 then
   echo -e "Getting oh-my-zsh:"
   sh -c "$(curl -fsFL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  echo "\n"
 else
   echo -e "${red}Skipping oh-my-zsh!${no_color}\n"
 fi
@@ -93,6 +97,7 @@ if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes
 then
   echo -e "Getting zsh-syntax-highlighting:"
   brew install zsh-syntanx-highlighting
+  echo "\n"
 else
   echo -e "${red}Skipping zsh-syntax-highlighting!${no_color}\n"
 fi
@@ -108,7 +113,7 @@ then
   brew cask install font-spacemono-nerd-font
   brew cask install font-spacemono-nerd-font-mono
   echo -e "${yellow}NOTE: You may have to select a nerd font in iTerm2 preferences"
-  echo -e "Look for font-spacemono-nerdfont ${no_color}"
+  echo -e "Look for font-spacemono-nerdfont ${no_color}\n"
 else
   echo -e "${red}Skipping Nerd Fonts!${no_color}\n"
 fi
@@ -126,6 +131,7 @@ then
   echo -e "POWERLEVEL9K_PROMPT_ADD_NEWLINE=true" >> ~/.zshrc
   echo -e "POWERLEVEL9K_PROMPT_ON_NEWLINE=true" >> ~/.zshrc
   echo -e "POWERLEVEL9K_RPROMPT_ON_NEWLINE=true" >> ~/.zshrc
+  echo "\n"
 else
   echo -e "${red}Skipping Powerlevel9k!${no_color}\n"
 fi
@@ -137,6 +143,7 @@ if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes
 then
   echo -e "Getting Ruby:"
   brew install ruby
+  echo "\n"
 else
   echo -e "${red}Skipping Ruby!${no_color}\n"
 fi
@@ -154,6 +161,7 @@ then
   echo "alias ls='colorls --sort-dirs' " >> ~/.zshrc
   echo "alias l='colorls -l' " >> ~/.zshrc
   echo "alias ll='colorls -la' " >> ~/.zshrc
+  echo "\n"
 else
   echo -e "${red}Skipping ColorLS!${no_color}\n"
 fi
@@ -167,6 +175,7 @@ then
   # Get wget
   echo -e "Getting wget:"
   brew install wget
+  echo "\n"
 else
   echo -e "${red}Skipping wget!${no_color}\n"
 fi
@@ -182,6 +191,7 @@ then
   echo "# These were added via the setup script" >> ~/.zshrc
   echo "alias tls='tmux ls' " >> ~/.zshrc
   echo "alias n='tmux new -s' " >> ~/.zshrc
+  echo "\n"
 else
   echo -e "${red}Skipping tmux!${no_color}\n"
 fi
@@ -196,6 +206,7 @@ then
   git clone https://github.com/gpakosz/.tmux.git
   ln -s -f .tmux/.tmux.conf
   cp .tmux/.tmux.conf.local .
+  echo "\n"
 else
   echo -e "${red}Skipping oh-my-tmux!${no_color}\n"
 fi
@@ -221,6 +232,7 @@ then
     echo -e "${yellow} NOTE: Tmuxinator requires a default text editor be set;"
     echo -e" You have the option of the script setting one later on ${no_color}"
   fi
+echo "\n"
 else
   echo -e "${red}Skipping Tmuxinator!${no_color}\n"
 fi
@@ -230,6 +242,7 @@ read -p "Do you want VIM set as default terminal text editor? (y/n):" ans
 if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "export EDITOR='vim' " >> ~/.zshrc
+  echo "\n"
 else
   echo -e "${red}NOT setting VIM as default${no_color}\n"
 fi
@@ -243,6 +256,7 @@ then
   echo "# These were added via the setup script" >> ~/.zshrc
   echo "alias c='clear' " >> ~/.zshrc
   echo "alias e='exit' " >> ~/.zshrc
+  echo "\n"
 else
   echo -e "${red}NOT creating aliases!${no_color}\n"
 fi
