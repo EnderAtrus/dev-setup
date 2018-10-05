@@ -27,7 +27,6 @@ white='\033[1;37m'
 no_color='\033[0m'
 
 # Announce the Running of the script
-yell
 echo -e "${green}Welcome to Seth's Terminal Development Envrionment Setup Script for macOS${no_color}"
 echo -e "${cyan}Feel free to opt out of any features or tools that you want, even though I do recommend each one :)${no_color}"
 echo -e "${yellow}NOTE: This requires a working internet connection and the ability to clone git repos${no_color}"
@@ -205,7 +204,7 @@ fi
 echo -e "Do you want Tmuxinator? (Manages complex tmux sessions for easy context switching) "
 echo -e -n "${yellow}[Requires tmux, Ruby, wget] ${no_color}(y/n):"
 read ans
-
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "Getting Tmuxinator:"
   gem install tmuxinator
