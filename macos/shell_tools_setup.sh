@@ -46,6 +46,32 @@ else
   echo -e "${red}Skipping Homebrew!${no_color}\n"
 fi
 
+# Get Python3
+echo -e -n "Do you want the Python3? (y/n):"
+read ans
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
+then
+  echo -e "Getting Python3:"
+  brew install python3
+  echo "\n"
+else
+  echo -e "${red}Skipping Python3!${no_color}\n"
+fi
+
+
+# Get Xcode
+echo -e -n "Do you want the Xcode? (y/n):"
+read ans
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
+then
+  echo -e "Getting Xcode:"
+  xcode-select --install
+  echo "\n"
+else
+  echo -e "${red}Skipping Xcode!${no_color}\n"
+fi
+
+
 # Get iTerm2
 echo -e -n "Do you want the iTerm2 macOS terminal replacement? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
@@ -264,5 +290,14 @@ else
   echo -e "${red}NOT creating aliases!${no_color}\n"
 fi
 
+# Git Configuration Setup
+echo -e -n "Do you want common git configuration? ${yellow}[Requires git] ${no_color}(y/n):"
+read ans
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
+  then
+  git config --global core.autocrlf true
+else
+  echo -e "${red}Skipping git configuration!${no_color}\n"
+fi
 
 echo -e "${green}Done, enjoy the new terminal environment!${no_color}"
