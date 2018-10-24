@@ -47,7 +47,7 @@ else
 fi
 
 # Get Python3
-echo -e -n "Do you want the Python3? (y/n):"
+echo -e -n "Do you want Python3? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
 read ans
 if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
@@ -58,9 +58,20 @@ else
   echo -e "${red}Skipping Python3!${no_color}\n"
 fi
 
+# Get Android Platform Tools
+echo -e -n "Do you want the Android Platform Tools? ${yellow}[Requires Homebrew] ${no_color}(y/n):"
+read ans
+if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
+then
+  echo -e "Getting Android-Platform-Tools:"
+  brew cask install android-platform-tools
+  echo "\n"
+else
+  echo -e "${red}Skipping Android Platform tools!${no_color}\n"
+fi
 
 # Get Xcode
-echo -e -n "Do you want the Xcode? (y/n):"
+echo -e -n "Do you want Xcode? (y/n):"
 read ans
 if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
@@ -271,6 +282,7 @@ read -p "Do you want VIM set as default terminal text editor? (y/n):" ans
 if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
 then
   echo -e "export EDITOR='vim' " >> ~/.zshrc
+  git config --global core.editor vim
   echo "\n"
 else
   echo -e "${red}NOT setting VIM as default${no_color}\n"
@@ -296,6 +308,13 @@ read ans
 if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes' ] || [ "$ans" = 'YES' ]
   then
   git config --global core.autocrlf true
+  git config --global core.whitespace tab-in-indent,trailing-space,space-before-tab
+  git config --system receive.denyNonFastFowards true
+  echo "alias commit='commit -v' " >> ~/.zshrc
+  echo "alias pullr='pull --rebase' " >> ~/.zshrc
+  echo "alias gs='git status' " >> ~/.zshrc
+  echo "alias ga='git add' " >> ~/.zshrc
+  echo "autoload -Uz compinit && compinit" >> ~/.zshrc
 else
   echo -e "${red}Skipping git configuration!${no_color}\n"
 fi
