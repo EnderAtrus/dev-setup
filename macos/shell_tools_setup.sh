@@ -310,11 +310,12 @@ if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes
   git config --global core.autocrlf true
   git config --global core.whitespace tab-in-indent,trailing-space,space-before-tab
   git config --system receive.denyNonFastFowards true
-  echo "alias commit='commit -v' " >> ~/.zshrc
+  echo "alias gc='commit -v' " >> ~/.zshrc
   echo "alias pullr='pull --rebase' " >> ~/.zshrc
   echo "alias gs='git status' " >> ~/.zshrc
   echo "alias ga='git add' " >> ~/.zshrc
   echo "autoload -Uz compinit && compinit" >> ~/.zshrc
+  echo "alias adog='git log --all --decorate --online --graph' " >> ~/.zshrc
 else
   echo -e "${red}Skipping git configuration!${no_color}\n"
 fi
