@@ -316,6 +316,8 @@ if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes
   echo "alias ga='git add' " >> ~/.zshrc
   echo "autoload -Uz compinit && compinit" >> ~/.zshrc
   echo "alias adog='git log --all --decorate --online --graph' " >> ~/.zshrc
+  # echo "'setw -g mouse on' " >> ~/tmux.conf #TODO
+
 else
   echo -e "${red}Skipping git configuration!${no_color}\n"
 fi
