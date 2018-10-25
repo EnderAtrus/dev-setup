@@ -231,6 +231,7 @@ then
   echo "# These were added via the setup script" >> ~/.zshrc
   echo "alias tls='tmux ls' " >> ~/.zshrc
   echo "alias n='tmux new -s' " >> ~/.zshrc
+  echo "'setw -g mouse on' " >> ~/.tmux.conf #TODO
   echo "\n"
 else
   echo -e "${red}Skipping tmux!${no_color}\n"
@@ -316,7 +317,6 @@ if [ "$ans" = 'y' ] || [ "$ans" = 'yes' ] || [ "$ans" = 'Y' ] || [ "$ans" = 'Yes
   echo "alias ga='git add' " >> ~/.zshrc
   echo "autoload -Uz compinit && compinit" >> ~/.zshrc
   echo "alias adog='git log --all --decorate --online --graph' " >> ~/.zshrc
-  # echo "'setw -g mouse on' " >> ~/tmux.conf #TODO
 
 else
   echo -e "${red}Skipping git configuration!${no_color}\n"
